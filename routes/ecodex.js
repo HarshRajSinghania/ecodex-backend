@@ -23,10 +23,14 @@ const upload = multer({
   }
 });
 
-// Initialize OpenAI-compatible client
+// Initialize OpenRouter client with required headers
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: process.env.OPENAI_BASE_URL
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: "https://openrouter.ai/api/v1",
+  defaultHeaders: {
+    "HTTP-Referer": process.env.SITE_URL, // Required for OpenRouter
+    "X-Title": "EcoDEX Wildlife"          // App name for analytics
+  }
 });
 
 // Helper function to convert buffer to base64
@@ -104,7 +108,7 @@ router.post('/identify', auth, upload.single('image'), async (req, res) => {
 
     // Call OpenAI Vision API
     const response = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL,
+      model: "qwen/qwen2.5-vl-72b-instruct:free", // Free model via OpenRouter
       messages: [
         {
           role: "user",
@@ -382,7 +386,7 @@ Remember: You're not just an AI, you're Dr. Maya Chen, a real person who cares d
 
     // Call OpenAI API
     const response = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL,
+      model: "deepseek/deepseek-r1:free",
       messages: messages,
       max_tokens: 800,
       temperature: 0.8
