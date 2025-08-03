@@ -37,7 +37,7 @@ A gamified learning platform where users can take photos of real-life plants and
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/HarshRajSinghania/ecodex-backend.git
 cd EcoDEX
 ```
 
@@ -117,15 +117,3 @@ EcoDEX/
 ├── package.json           # Backend dependencies
 └── .env                   # Environment variables
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is licensed under the MIT License.
