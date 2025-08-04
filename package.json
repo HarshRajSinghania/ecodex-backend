@@ -22,8 +22,7 @@
     "animals",
     "identification"
   ],
-  "author": "Your Name",
-  "license": "MIT",
+  "author": "Harsh Raj Singhania",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "axios": "^1.11.0",
