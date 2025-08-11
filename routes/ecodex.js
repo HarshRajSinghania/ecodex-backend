@@ -386,7 +386,7 @@ Remember: You're not just an AI, you're Dr. Maya Chen, a real person who cares d
 
     // Call OpenAI API
     const response = await openai.chat.completions.create({
-      model: "deepseek/deepseek-r1:free",
+      model: "moonshotai/kimi-vl-a3b-thinking:free",
       messages: messages,
       max_tokens: 800,
       temperature: 0.8
